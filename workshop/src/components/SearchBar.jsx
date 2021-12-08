@@ -1,12 +1,12 @@
 import React from 'react';
 
 const SearchBar = (props) => {
-  const { searchGiphy } = props;
   const handleChange = (event) => {
-    searchGiphy(event.currentTarget.value);
+    const { fetchGiphy } = props;
+    fetchGiphy(event.currentTarget.value);
   };
   return (
-    <input type="text" className="form-search form-control" onChange={handleChange} />
+    <input className="form-search form-control" type="text" placeholder="Search for a gif Caio" onChange={handleChange} />
   );
 };
 

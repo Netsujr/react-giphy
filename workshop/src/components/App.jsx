@@ -8,7 +8,7 @@ const App = () => {
   const [gifList, setGifList] = useState(["5ntdy5Ban1dIY", "ZG719ozZxGuThHBckn", "u6uAu3yyDNqRq"]);
   // const selectedGif = "";
   // const gifList = [];
-  const seachGiphy = (keyword) => {
+  const searchGiphy = (keyword) => {
     giphy.search({
       q: keyword,
       rating: 'g',
@@ -20,15 +20,15 @@ const App = () => {
     });
   };
 
-  const giphy = require('giphy-api')({
-  apiKey: '//Keyhere',
-  https: true
-});
+//   const giphy = require('giphy-api')({
+//   apiKey: '//Keyhere',
+//   https: true
+// });
 
   return (
     <div>
       <div className="left-scene">
-        <SearchBar gifIDarray={gifIDarray} />
+        <SearchBar searchGiphy={searchGiphy} />
         <div className="selected-gif">
           <Gif gifID={selectedGif} />
         </div>

@@ -6,8 +6,13 @@ import SearchBar from './SearchBar';
 const App = () => {
   const [selectedGif, setSelectedGif] = useState("gG6OcTSRWaSis");
   const [gifList, setGifList] = useState(["5ntdy5Ban1dIY", "ZG719ozZxGuThHBckn", "u6uAu3yyDNqRq"]);
-  // const selectedGif = "";
-  // const gifList = [];
+
+  //   const giphy = require('giphy-api')({
+  //   apiKey: '//Keyhere',
+  //   https: true
+  // });
+
+
   const searchGiphy = (keyword) => {
     giphy.search({
       q: keyword,
@@ -20,10 +25,6 @@ const App = () => {
     });
   };
 
-//   const giphy = require('giphy-api')({
-//   apiKey: '//Keyhere',
-//   https: true
-// });
 
   return (
     <div>

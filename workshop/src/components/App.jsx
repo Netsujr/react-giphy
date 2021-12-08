@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import SearchBar from './SearchBar';
 import GifList from './GifList';
 import Gif from './Gif';
@@ -11,14 +10,14 @@ const giphy = require('giphy-api')({
 
 const App = () => {
   const [gifIdSelected, setGifIdSelected] = useState("ZG719ozZxGuThHBckn");
-  const [giIdList, setGiIdList] = useState(["WuGSL4LFUMQU", "5ntdy5Ban1dIY", "LmNwrBhejkK9EFP504", "TilmLMmWrRYYHjLfub", "kHrKpJiCbOmkWD4xT9", "HuVCpmfKheI2Q", "u6uAu3yyDNqRq"]);
+  const [giIdList, setGifIdList] = useState(["WuGSL4LFUMQU", "5ntdy5Ban1dIY", "LmNwrBhejkK9EFP504", "TilmLMmWrRYYHjLfub", "kHrKpJiCbOmkWD4xT9", "HuVCpmfKheI2Q", "u6uAu3yyDNqRq"]);
   const fetchGiphy = (keyword) => {
     giphy.search({
       q: keyword,
       rating: 'g',
       limit: 10
     }, (err, res) => {
-      setGiIdList(res.data.map((gif) => gif.id));
+      setGifIdList(res.data.map((gif) => gif.id));
     });
   };
   const changeSelectGif = (newSelectedGifId) => {

@@ -8,10 +8,27 @@ const App = () => {
   const [gifList, setGifList] = useState(["5ntdy5Ban1dIY", "ZG719ozZxGuThHBckn", "u6uAu3yyDNqRq"]);
   // const selectedGif = "";
   // const gifList = [];
+  const seachGiphy = (keyword) => {
+    giphy.search({
+      q: keyword,
+      rating: 'g',
+      limit: 10
+    }, (err, res) => {
+      // res.data.map((gif) => gif.id); //array with 10 gif ids
+      const gifIDarray = res.data.map((gif) => gif.id);
+      setGifList(gifIDarray);
+    });
+  };
+
+  const giphy = require('giphy-api')({
+  apiKey: '//Keyhere',
+  https: true
+});
+
   return (
     <div>
       <div className="left-scene">
-        <SearchBar />
+        <SearchBar gifIDarray={gifIDarray} />
         <div className="selected-gif">
           <Gif gifID={selectedGif} />
         </div>
